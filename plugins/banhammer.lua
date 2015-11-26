@@ -1,15 +1,3 @@
-local function kick_by_reply_callback(extra, success, result)
-  if is_administrator(result.from.id) then
-    send_msg(extra, "member kicked!", ok_cb, false)
-  else
-    local del = chat_del_user("chat#id"..result.to.id, "user#id"..result.from.id, ok_cb, false)
-    if del == false then
-      send_msg(extra, "Kicking failed.", ok_cb, false)
-      return
-    end
-  end
-end
-
 local function is_user_whitelisted(id)
   local hash = 'whitelist:user#id'..id
   local white = redis:get(hash) or false
@@ -309,7 +297,6 @@ return {
   "!ban user <user_id> : Kick user from chat and kicks it if joins chat again",
   "!ban user <username> : Kick user from chat and kicks it if joins chat again",
   "!ban delete <user_id> : Unban user",
-  "!kick : Kick user from chat group by reply",
   "!kickme : Bot kick users",
   "!kick <user_id> : Kick user from chat group by id",
   "!kick <username> : Kick user from chat group by username",
