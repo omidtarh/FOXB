@@ -2,9 +2,8 @@ do
 
 function run(msg, matches)
   return 'critech '.. VERSION .. [[ 
-  best anti spammer
-  critech security by
-  critech company.]]
+  
+B♦: 𝓸𝓶𝓲𝓭 𝔀𝓲𝔃𝓪𝓻𝓭 .]]
 end
 
 return {
